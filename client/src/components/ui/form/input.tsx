@@ -1,16 +1,16 @@
 import * as React from "react";
-// import { type UseFormRegisterReturn } from "react-hook-form";
 import { cn } from "../../../utils/cn";
 import { FieldWrapper, FieldWrapperPassThroughProps } from "./field-wrapper";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> &
   FieldWrapperPassThroughProps & {
     className?: string;
-    // registration: Partial<UseFormRegisterReturn>;
+    registration: Partial<UseFormRegisterReturn>;
   };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, label, error, /* registration */ ...props }, ref) => {
+  ({ className, type, label, error, registration, ...props }, ref) => {
     return (
       <FieldWrapper label={label} error={error}>
         <input
@@ -20,7 +20,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className
           )}
           ref={ref}
-          // {...registration}
+          {...registration}
           {...props}
         />
       </FieldWrapper>

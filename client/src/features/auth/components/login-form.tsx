@@ -1,6 +1,8 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { Input } from "../../../components/ui/form";
 import { Button } from "../../../components/ui/button";
+import { loginInputSchema } from "../../../lib/auth";
+import { Form } from "../../../components/ui/form";
 
 // import { Button } from '@/components/ui/button';
 // import { Form, Input } from '@/components/ui/form';
@@ -19,34 +21,34 @@ export const LoginForm = () => {
 
   return (
     <div>
-      <form
-      // onSubmit={(values) => {
-      //   login.mutate(values);
-      // }}
-      // schema={loginInputSchema}
+      <Form
+        onSubmit={(values) => {
+          console.log(values);
+        }}
+        schema={loginInputSchema}
       >
-        {/* {({ register, formState }) => (
-          <> */}
-        <Input
-          type="email"
-          label="Email Address"
-          // error={formState.errors['email']}
-          // registration={register('email')}
-        />
-        <Input
-          type="password"
-          label="Password"
-          // error={formState.errors['password']}
-          // registration={register('password')}
-        />
-        <div>
-          <Button type="submit" className="w-full">
-            Log in
-          </Button>
-        </div>
-        {/* </>
-        )} */}
-      </form>
+        {({ register, formState }) => (
+          <>
+            <Input
+              type="email"
+              label="Email Address"
+              error={formState.errors["email"]}
+              registration={register("email")}
+            />
+            <Input
+              type="password"
+              label="Password"
+              error={formState.errors["password"]}
+              registration={register("password")}
+            />
+            <div>
+              <Button type="submit" className="w-full">
+                Log in
+              </Button>
+            </div>
+          </>
+        )}
+      </Form>
       <div className="mt-2 flex items-center justify-end">
         <div className="text-sm">
           <Link

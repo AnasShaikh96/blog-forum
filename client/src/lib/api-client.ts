@@ -1,9 +1,10 @@
-import Axios from 'axios';
+import Axios, { InternalAxiosRequestConfig } from 'axios';
 
 // import { useNotifications } from '@/components/ui/notifications';
 // import { env } from '@/config/env';
+// impo
 
-function authRequestInterceptor(config) {
+function authRequestInterceptor(config: InternalAxiosRequestConfig) {
   if (config.headers) {
     config.headers.Accept = 'application/json';
   }
@@ -13,7 +14,7 @@ function authRequestInterceptor(config) {
 }
 
 export const api = Axios.create({
-  baseURL: env.API_URL,
+  baseURL: 'http://localhost:3000' //env.API_URL,
 });
 
 api.interceptors.request.use(authRequestInterceptor);

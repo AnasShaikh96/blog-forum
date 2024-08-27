@@ -1,6 +1,7 @@
 // import { QueryClient } from "@tanstack/react-query";
 import { createBrowserRouter } from "react-router-dom";
 import { ProtectedRoute } from "../../lib/auth";
+import { AppRoot } from "./app/root";
 
 export const createRouter = () => {
   return createBrowserRouter([
@@ -20,12 +21,19 @@ export const createRouter = () => {
     },
     {
       path: "/app",
-      element: <ProtectedRoute>hi</ProtectedRoute>,
+      element: (
+        <ProtectedRoute>
+          <AppRoot />
+        </ProtectedRoute>
+      ),
       children: [
         {
           path: "first",
-          // lazy:
-          element: <div>hii</div>,
+          element: <div>hello</div>,
+          // lazy: async () => {
+          //   const { Example } = await import("./app/example");
+          //   return { Component: Example };
+          // },
         },
       ],
     },

@@ -4,10 +4,6 @@ import { Button } from "../../../components/ui/button";
 import { loginInputSchema } from "../../../lib/auth";
 import { Form } from "../../../components/ui/form";
 
-// import { Button } from '@/components/ui/button';
-// import { Form, Input } from '@/components/ui/form';
-// import { useLogin, loginInputSchema } from '@/lib/auth';
-
 // type LoginFormProps = {
 //   onSuccess: () => void;
 // };

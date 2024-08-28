@@ -36,16 +36,20 @@ const buttonVariants = cva(
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLElement> &
   VariantProps<typeof buttonVariants> & {
     isLoading?: boolean;
+    icon?: React.ReactNode;
   };
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, children, isLoading }, ref) => {
+  ({ className, variant, size, children, icon, isLoading }, ref) => {
     return (
       <button
         ref={ref}
         className={cn(buttonVariants({ variant, size, className }))}
       >
         {isLoading && <Spinner size="sm" className="text-current" />}
+        {!isLoading && icon && (
+          <span className={children ? "mr-1" : ""}>{icon}</span>
+        )}
         <span className="ml-1"> {children}</span>
       </button>
     );

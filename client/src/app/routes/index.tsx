@@ -28,12 +28,11 @@ export const createRouter = () => {
       ),
       children: [
         {
-          path: "first",
-          element: <div>hello</div>,
-          // lazy: async () => {
-          //   const { Example } = await import("./app/example");
-          //   return { Component: Example };
-          // },
+          path: "",
+          lazy: async () => {
+            const { Home } = await import("./app/home");
+            return { Component: Home };
+          },
         },
       ],
     },

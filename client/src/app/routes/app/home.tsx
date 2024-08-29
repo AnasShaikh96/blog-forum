@@ -1,18 +1,13 @@
-import { Post } from "../../../components/ui/post";
+// import { Post } from "../../../components/ui/post";
+import { Comment, CommentBox } from "../../../components/ui/comment";
 import { PostExpanded } from "../../../components/ui/post/postExpanded";
 
 export const Home = () => {
   return (
-    // <>
-    <div className="flex flex-col gap-y-8">
+    <div className="flex flex-col ">
       <PostExpanded />
-      {/* <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post /> */}
+      <Comment />
+      <CommentBox />
     </div>
-
-    // </>
   );
 };

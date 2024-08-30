@@ -34,6 +34,20 @@ export const createRouter = () => {
             return { Component: Home };
           },
         },
+        {
+          path: "profile",
+          lazy: async () => {
+            const { Profile } = await import("./app/profile/profile");
+            return { Component: Profile };
+          },
+        },
+        {
+          path: "settings",
+          lazy: async () => {
+            const { Settings } = await import("./app/settings/settings");
+            return { Component: Settings };
+          },
+        },
       ],
     },
   ]);

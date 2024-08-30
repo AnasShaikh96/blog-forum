@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/24/outline";
 export const Post = () => {
   return (
-    <div className="w-full border border-grey-light cursor-pointer rounded-md hover:bg-gray-50  lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div className="w-full border border-grey-light cursor-pointer rounded-md hover:bg-gray-50  lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b lg:rounded-r p-4 flex flex-col justify-between leading-normal">
       <div className="">
         <div className="flex items-center mb-3">
           <img

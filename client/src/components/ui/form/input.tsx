@@ -6,7 +6,7 @@ import { UseFormRegisterReturn } from "react-hook-form";
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> &
   FieldWrapperPassThroughProps & {
     className?: string;
-    registration: Partial<UseFormRegisterReturn>;
+    registration?: Partial<UseFormRegisterReturn>;
   };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
